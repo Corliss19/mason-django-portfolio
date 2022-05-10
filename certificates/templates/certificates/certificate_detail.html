@@ -1,0 +1,14 @@
+{% extends "projects/base.html" %}
+
+{% block content %}
+<h1>{{certificate.title}}</h1>
+
+
+    <p>{{ certificate.skills }}</p>
+    <p>{{ certificate.source }}</p>
+    <p>{{ certificate.link }}</p>
+
+<hr/>
+
+<a href="{% url 'all_certificates' %}">All Certificates</a>
+{% endblock content %}

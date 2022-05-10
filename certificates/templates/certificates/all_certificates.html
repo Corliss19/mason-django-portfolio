@@ -1,0 +1,21 @@
+{% extends "projects/base.html" %}
+
+{% block content %}
+<h1>Certificate Listing</h1>
+
+{% if messages %}
+<ul class="messages" style="background-color:#ccc">
+  {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+      {{ message }}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<ul>
+{% for certificate in certificates %}
+  <li> <a href="{% url 'certificate_detail' certificate.pk %}">{{certificate.title}}</a> </li>
+{% endfor %}
+</ul>
+{% endblock content %}
