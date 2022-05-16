@@ -14,7 +14,7 @@ def all_certificates(request):
 def certificate_detail(request, pk):
     certificates = Certificate.objects.get(pk=pk)
     return render(request, 'certificates/certificate_detail.html',
-                  {'certificates': certificates})
+                  {'certificate': certificates})
 
 def see_request(request):
     text = f"""

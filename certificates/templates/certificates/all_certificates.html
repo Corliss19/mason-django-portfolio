@@ -1,5 +1,7 @@
 {% extends "projects/base.html" %}
 
+{% load static %}
+
 {% block content %}
 <h1>Certificate Listing</h1>
 
@@ -15,7 +17,17 @@
 
 <ul>
 {% for certificate in certificates %}
-  <li> <a href="{% url 'certificate_detail' certificate.pk %}">{{certificate.title}}</a> </li>
+  <div class="col-md-4">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ certificate.title }}</h5>
+                        <a href="{% url 'certificate_detail' certificate.pk %}"
+                        class="btn btn-primary">
+                            Details
+                        </a>
+                    </div>
+                </div>
+            </div>
 {% endfor %}
 </ul>
 {% endblock content %}

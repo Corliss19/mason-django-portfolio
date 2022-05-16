@@ -1,14 +1,19 @@
 {% extends "projects/base.html" %}
 
+{% load static %}
+
 {% block content %}
-<h1>{{certificate.title}}</h1>
+<br>
+</br>
+    <h1>{{ certificate.title }}</h1>
+<br>
+</br>
+    <img src="{% static cert_image.image %}" alt="image">
+    <p> <strong>skills used:</strong> {{ certificate.skills }}</p>
+    <p> <strong>issued from:</strong> {{ certificate.source }}</p>
+    <a href="{{ certificate.link }}">Certificate Link</a>
+    {{ value|linebreaks }}
 
+<a href="{% url 'all_certificates' %}">Back to  List</a>
 
-    <p>{{ certificate.skills }}</p>
-    <p>{{ certificate.source }}</p>
-    <p>{{ certificate.link }}</p>
-
-<hr/>
-
-<a href="{% url 'all_certificates' %}">All Certificates</a>
-{% endblock content %}
+{% endblock %}

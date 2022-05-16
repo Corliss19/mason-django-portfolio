@@ -1,4 +1,4 @@
-{% extends 'projects/base.html' %}
+{% extends "projects/base.html" %}
 
 {% load static %}
 
@@ -8,4 +8,6 @@
     <h1>{{ project.title }}</h1>
     <p>{{ project.technology }}</p>
 
+
+<a href="{% url 'projects:all_projects' %}">Back to Projects</a>
 {% endblock %}
